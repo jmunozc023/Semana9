@@ -1,5 +1,6 @@
 package com.mycompany.ejercicio3;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -37,14 +38,28 @@ public class Ejercicio3 extends JFrame implements ActionListener {
             combo3.addItem(String.valueOf(f));
         }
         add(combo3);
-        
+        boton1=new JButton("Fijar color");
+        boton1.setBounds(10, 130, 100, 30);
+        add(boton1);
+        boton1.addActionListener(this);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if(e.getSource()==boton1){
+            String cad1=(String)combo1.getSelectedItem();
+            String cad2=(String)combo2.getSelectedItem();
+            String cad3=(String)combo3.getSelectedItem();
+            int rojo=Integer.parseInt(cad1);
+            int verde=Integer.parseInt(cad2);
+            int azul=Integer.parseInt(cad3);
+            Color color1=new Color(rojo,verde,azul);
+            boton1.setBackground(color1);
+        }
     }
     public static void main(String[] args) {
-        
+        Ejercicio3 formulario1=new Ejercicio3();
+        formulario1.setBounds(0, 0, 400, 300);
+        formulario1.setVisible(true);
     }
 
     
