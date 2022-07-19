@@ -29,14 +29,28 @@ class Ejercicio5 extends JFrame implements ActionListener {
         mi4=new JMenuItem("Verde");
         menu3.add(mi4);
         mi4.addActionListener(this);
-
+        
+        
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (e.getSource()==mi1){
+            setSize(640,480);
+        }
+        if (e.getSource()==mi2){
+            setSize(1024,768);
+        }
+        if (e.getSource()==mi3){
+            getContentPane().setBackground(new Color(255,0,0));
+        }
+        if (e.getSource()==mi4){
+            getContentPane().setBackground(new Color(0,255,0));
+        }
     }
     public static void main(String[] args) {
-        
+        Ejercicio5 formulario1= new Ejercicio5();
+        formulario1.setBounds(0, 0, 300, 200);
+        formulario1.setVisible(true);
     }
 
     
